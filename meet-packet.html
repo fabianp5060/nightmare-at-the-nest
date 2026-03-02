@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 Nightmare at the Nest — Official Meet Packet</title>
+  <style>
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:  #00736B;
+      --teal-dark: #005c55;
+      --teal-light: #e6f4f3;
+      --black: #111111;
+      --white: #FFFFFF;
+      --gold:  #C9A84C;
+      --gold-light: #FFF8E1;
+      --gray-100: #F5F5F5;
+      --gray-200: #E8E8E8;
+      --gray-400: #9E9E9E;
+      --gray-700: #444444;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--black);
+      background: var(--white);
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ============================================================
+       TOP NAVIGATION
+    ============================================================ */
+    #top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--black);
+      border-bottom: 3px solid var(--teal);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      height: 48px;
+    }
+
+    .nav-brand {
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links li a {
+      display: block;
+      padding: 0 11px;
+      height: 48px;
+      line-height: 48px;
+      color: var(--gray-200);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links li a:hover {
+      color: var(--white);
+      background: var(--teal);
+      text-decoration: none;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      flex-direction: column;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+
+    /* ============================================================
+       PAGE WRAPPER
+    ============================================================ */
+    .page-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px 40px;
+    }
+
+    /* ============================================================
+       SECTION COMMON
+    ============================================================ */
+    .section {
+      padding: 48px 0 40px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .section:last-of-type { border-bottom: none; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--teal);
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .section-divider {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(to right, var(--teal) 0%, var(--gray-200) 100%);
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--black);
+      margin: 28px 0 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    h3:first-child { margin-top: 0; }
+
+    p { margin-bottom: 14px; color: var(--gray-700); }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol { padding-left: 20px; color: var(--gray-700); }
+    li { margin-bottom: 6px; }
+
+    strong { color: var(--black); }
+
+    /* ============================================================
+       HERO / HEADER
+    ============================================================ */
+    #hero {
+      background: var(--black);
+      text-align: center;
+      padding: 40px 24px 36px;
+    }
+
+    #hero .logo-wrap {
+      margin: 0 auto 24px;
+    }
+
+    #hero .logo-wrap img {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    #hero .meet-label {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    #hero .school-line {
+      font-size: 0.95rem;
+      color: var(--white);
+      letter-spacing: 0.03em;
+      margin-bottom: 8px;
+    }
+
+    #hero .date-line {
+      font-size: 1.0rem;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 18px;
+    }
+
+    .badge-pill {
+      display: inline-block;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 100px;
+      border: 2px solid var(--gold);
+    }
+
+    /* ============================================================
+       QUICK INFO BAR
+    ============================================================ */
+    #quick-info {
+      background: var(--teal);
+      padding: 0;
+    }
+
+    #quick-info-inner {
+      position: sticky;
+      top: 48px;
+      z-index: 900;
+      background: var(--teal);
+    }
+
+    .quick-info-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 0 16px;
+    }
+
+    .qi-tile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+    .qi-tile:last-child { border-right: none; }
+
+    .qi-icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .qi-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .qi-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.65);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .qi-value {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    /* ============================================================
+       WELCOME SECTION
+    ============================================================ */
+    .contact-block {
+      background: var(--gray-100);
+      border-left: 4px solid var(--teal);
+      padding: 16px 20px;
+      border-radius: 4px;
+      margin-top: 24px;
+      font-size: 0.9rem;
+    }
+    .contact-block strong { display: block; margin-bottom: 4px; color: var(--teal); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; }
+    .contact-block .contact-name { font-size: 1.0rem; font-weight: 700; color: var(--black); margin-bottom: 4px; }
+    .contact-block a { color: var(--teal); }
+
+    /* ============================================================
+       VENUE SECTION
+    ============================================================ */
+    .venue-details {
+      background: var(--gray-100);
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+    }
+    .venue-details p { margin-bottom: 8px; font-size: 0.95rem; }
+
+    .venue-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .venue-meta-tile {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-top: 3px solid var(--teal);
+      border-radius: 4px;
+      padding: 14px 16px;
+    }
+    .venue-meta-tile .vmt-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--gray-400);
+      margin-bottom: 4px;
+    }
+    .venue-meta-tile .vmt-value {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--black);
+    }
+
+    .field-events-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .fe-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 4px;
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .fe-card .fe-event {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--black);
+    }
+    .fe-card .fe-location {
+      font-size: 0.82rem;
+      color: var(--gray-700);
+    }
+    .fe-card .fe-order {
+      font-size: 0.75rem;
+      color: var(--teal);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .clerk-note {
+      margin-top: 16px;
+      background: var(--teal-light);
+      border-radius: 4px;
+      padding: 12px 16px;
+      font-size: 0.88rem;
+      color: var(--black);
+    }
+
+    /* ============================================================
+       SCHEDULE SECTION
+    ============================================================ */
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .schedule-panel {
+      background: var(--gray-100);
+      border-radius: 6px;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .schedule-panel-header {
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 12px 18px;
+    }
+
+    .schedule-panel-body { padding: 18px; }
+
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    thead tr {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    thead th {
+      padding: 9px 12px;
+      text-align: left;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    tbody tr:nth-child(even) { background: var(--gray-100); }
+    tbody tr:nth-child(odd) { background: var(--white); }
+
+    tbody td {
+      padding: 9px 12px;
+      color: var(--gray-700);
+      border-bottom: 1px solid var(--gray-200);
+      vertical-align: top;
+    }
+
+    tbody td:first-child { font-weight: 600; color: var(--black); }
+
+    .tbd-inline {
+      color: var(--gold);
+      font-style: italic;
+      font-size: 0.8rem;
+    }
+
+    .running-order-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: running-counter;
+    }
+    .running-order-list li {
+      counter-increment: running-counter;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-200);
+      font-size: 0.9rem;
+    }
+    .running-order-list li:last-child { border-bottom: none; }
+    .running-order-list li::before {
+      content: counter(running-counter);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .schedule-note {
+      margin-top: 14px;
+      font-size: 0.82rem;
+      color: var(--gray-700);
+      background: var(--teal-light);
+      border-radius: 4px;
+      padding: 10px 14px;
+    }
+
+    /* ============================================================
+       ENTRY INFORMATION
+    ============================================================ */
+    .entry-box {
+      border: 1px solid var(--teal);
+      border-left: 5px solid var(--teal);
+      border-radius: 4px;
+      padding: 24px 28px;
+      background: var(--teal-light);
+    }
+
+    .entry-deadline-banner {
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 4px;
+      padding: 12px 18px;
+      margin-bottom: 20px;
+      font-weight: 800;
+      font-size: 1.0rem;
+      letter-spacing: 0.01em;
+    }
+    .entry-deadline-banner span {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 3px;
+    }
+
+    .entry-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .entry-item { font-size: 0.9rem; }
+    .entry-item .ei-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--teal-dark);
+      margin-bottom: 3px;
+    }
+    .entry-item .ei-value { color: var(--black); font-weight: 600; }
+
+    .entry-notes { margin-top: 16px; }
+    .entry-notes li { font-size: 0.88rem; color: var(--gray-700); margin-bottom: 10px; }
+
+    /* ============================================================
+       ENTRY FEES
+    ============================================================ */
+    .fee-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .fee-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-top: 4px solid var(--teal);
+      border-radius: 6px;
+      padding: 20px 22px;
+      text-align: center;
+    }
+
+    .fee-card .fc-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--gray-400);
+      margin-bottom: 8px;
+    }
+
+    .fee-card .fc-amount {
+      font-size: 2.0rem;
+      font-weight: 900;
+      color: var(--teal);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .fee-card .fc-sub {
+      font-size: 0.78rem;
+      color: var(--gray-700);
+    }
+
+    .payment-details {
+      background: var(--gray-100);
+      border-radius: 6px;
+      padding: 20px 24px;
+    }
+
+    .payment-details p { font-size: 0.92rem; margin-bottom: 10px; }
+
+    .payment-alert {
+      background: var(--black);
+      color: var(--gold);
+      border-radius: 4px;
+      padding: 12px 16px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 14px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ============================================================
+       ADMISSION
+    ============================================================ */
+    .admission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+
+    .admission-card {
+      border-radius: 6px;
+      padding: 20px 22px;
+    }
+    .admission-card.paid {
+      background: var(--black);
+      color: var(--white);
+    }
+    .admission-card.paid .ac-price {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .admission-card.paid .ac-detail {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.75);
+    }
+    .admission-card.paid .ac-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .admission-card.free {
+      background: var(--teal);
+      color: var(--white);
+    }
+    .admission-card.free .ac-free-label {
+      font-size: 1.6rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .admission-card.free .ac-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 6px;
+    }
+    .admission-card.free ul {
+      padding-left: 16px;
+      color: rgba(255,255,255,0.9);
+    }
+    .admission-card.free li { margin-bottom: 4px; font-size: 0.88rem; }
+
+    .admission-note {
+      background: var(--gray-100);
+      border-radius: 4px;
+      padding: 14px 18px;
+      font-size: 0.88rem;
+    }
+    .admission-note li { margin-bottom: 6px; }
+
+    /* ============================================================
+       COMPETITION RULES
+    ============================================================ */
+    .rules-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .rule-panel {
+      background: var(--gray-100);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .rule-panel-header {
+      background: var(--black);
+      color: var(--white);
+      padding: 10px 18px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .rule-panel-body { padding: 18px; }
+
+    .rule-panel-body ul { font-size: 0.88rem; }
+    .rule-panel-body li { margin-bottom: 10px; color: var(--gray-700); }
+
+    .rule-alert {
+      display: block;
+      background: var(--black);
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 8px 12px;
+      border-radius: 3px;
+      margin-top: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .rules-full-width {
+      grid-column: 1 / -1;
+    }
+
+    /* ============================================================
+       SCORING & AWARDS
+    ============================================================ */
+    .scoring-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .scoring-table-wrap {
+      overflow-x: auto;
+    }
+
+    .scoring-table {
+      border-collapse: collapse;
+      min-width: 240px;
+    }
+    .scoring-table th {
+      background: var(--teal);
+      color: var(--white);
+      padding: 8px 14px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+    .scoring-table td {
+      padding: 7px 14px;
+      font-size: 0.88rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .scoring-table td:first-child { font-weight: 700; }
+    .scoring-table tr:nth-child(1) td { color: var(--gold); font-weight: 800; }
+    .scoring-table tr:nth-child(2) td { color: var(--gray-700); font-weight: 700; }
+    .scoring-table tr:nth-child(3) td { color: #CD7F32; font-weight: 700; }
+
+    .awards-list { list-style: none; padding: 0; }
+    .awards-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--gray-200);
+      font-size: 0.9rem;
+      color: var(--gray-700);
+    }
+    .awards-list li:last-child { border-bottom: none; }
+    .awards-list .award-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .awards-pickup {
+      margin-top: 20px;
+      background: var(--gold-light);
+      border-left: 4px solid var(--gold);
+      border-radius: 4px;
+      padding: 14px 18px;
+      font-size: 0.9rem;
+    }
+
+    /* ============================================================
+       TIMING & RESULTS
+    ============================================================ */
+    .timing-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .timing-card {
+      border: 1px solid var(--gray-200);
+      border-top: 3px solid var(--teal);
+      border-radius: 4px;
+      padding: 18px;
+    }
+    .timing-card .tc-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--gray-400);
+      margin-bottom: 6px;
+    }
+    .timing-card .tc-value {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+    .timing-card .tc-note {
+      font-size: 0.8rem;
+      color: var(--gray-700);
+      margin-top: 4px;
+    }
+
+    /* ============================================================
+       PARKING
+    ============================================================ */
+    .parking-map-wrap {
+      margin: 20px 0;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 2px solid var(--gray-200);
+    }
+
+    .parking-map-wrap img {
+      width: 100%;
+    }
+
+    .parking-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .parking-item {
+      background: var(--gray-100);
+      border-radius: 4px;
+      padding: 14px 16px;
+    }
+    .parking-item .pi-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--teal);
+      margin-bottom: 4px;
+    }
+    .parking-item .pi-value { font-size: 0.88rem; color: var(--gray-700); }
+
+    .parking-prohibit {
+      background: var(--black);
+      color: var(--white);
+      border-radius: 4px;
+      padding: 12px 18px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-top: 16px;
+    }
+
+    /* ============================================================
+       VENUE MAP
+    ============================================================ */
+    .venue-map-wrap {
+      border-radius: 6px;
+      overflow: hidden;
+      border: 2px solid var(--gray-200);
+      margin-bottom: 10px;
+    }
+    .venue-map-wrap img { width: 100%; }
+
+    figcaption {
+      font-size: 0.82rem;
+      color: var(--gray-700);
+      padding: 8px 2px;
+      line-height: 1.4;
+    }
+
+    /* ============================================================
+       TBD PLACEHOLDER BOX
+    ============================================================ */
+    .tbd-box {
+      background: var(--gold-light);
+      border-left: 4px solid var(--gold);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+
+    .tbd-box .tbd-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .tbd-box p {
+      font-size: 0.9rem;
+      color: var(--gray-700);
+      margin-bottom: 8px;
+    }
+    .tbd-box p:last-child { margin-bottom: 0; }
+
+    /* ============================================================
+       SAFETY SECTION
+    ============================================================ */
+    .emergency-banner {
+      background: #C62828;
+      color: var(--white);
+      border-radius: 4px;
+      padding: 14px 20px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* ============================================================
+       CONTACTS
+    ============================================================ */
+    .contacts-table-wrap { overflow-x: auto; }
+
+    .contacts-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .contacts-table thead tr {
+      background: var(--teal);
+    }
+
+    .contacts-table thead th {
+      padding: 10px 16px;
+      text-align: left;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .contacts-table tbody td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--gray-200);
+      color: var(--gray-700);
+      vertical-align: middle;
+    }
+
+    .contacts-table tbody tr:hover { background: var(--gray-100); }
+
+    .contacts-table tbody td:first-child {
+      font-weight: 600;
+      color: var(--black);
+      white-space: nowrap;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    #footer {
+      background: var(--teal);
+      color: var(--white);
+      text-align: center;
+      padding: 24px 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    #footer .footer-sub {
+      font-size: 0.75rem;
+      opacity: 0.75;
+      margin-top: 6px;
+      font-weight: 400;
+    }
+
+    /* ============================================================
+       RESPONSIVE — TABLET / MOBILE
+    ============================================================ */
+
+    @media (max-width: 900px) {
+      .quick-info-grid { grid-template-columns: repeat(2, 1fr); }
+      .qi-tile:nth-child(2) { border-right: none; }
+
+      .venue-meta-grid { grid-template-columns: 1fr 1fr; }
+      .schedule-grid { grid-template-columns: 1fr; }
+      .rules-grid { grid-template-columns: 1fr; }
+      .scoring-grid { grid-template-columns: 1fr; }
+      .timing-cards { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 48px; left: 0; right: 0; background: var(--black); border-top: 1px solid var(--teal); z-index: 999; padding: 8px 0; }
+      .nav-links.open { display: flex; }
+      .nav-links li a { height: auto; line-height: 1.4; padding: 10px 16px; font-size: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+      .nav-toggle { display: flex; }
+      .nav-inner { position: relative; }
+
+      #hero .logo-wrap img { max-width: 220px; }
+
+      .quick-info-grid { grid-template-columns: 1fr 1fr; }
+
+      .field-events-grid { grid-template-columns: 1fr; }
+
+      .entry-grid { grid-template-columns: 1fr; }
+      .fee-cards { grid-template-columns: 1fr; }
+      .admission-grid { grid-template-columns: 1fr; }
+      .parking-grid { grid-template-columns: 1fr; }
+
+      .section-header h2 { font-size: 1.25rem; }
+
+      .timing-cards { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .quick-info-grid { grid-template-columns: 1fr; }
+      .qi-tile { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+      .qi-tile:last-child { border-bottom: none; }
+
+      .venue-meta-grid { grid-template-columns: 1fr; }
+
+      #hero { padding: 32px 16px 28px; }
+      #hero .logo-wrap img { max-width: 200px; }
+      #hero .meet-label { font-size: 0.9rem; }
+
+      .section { padding: 32px 0 28px; }
+    }
+
+    /* ============================================================
+       PRINT STYLES
+    ============================================================ */
+    @media print {
+      #top-nav,
+      #quick-info-inner { display: none !important; }
+
+      body { font-size: 11pt; color: #000; }
+
+      .section { break-inside: avoid; page-break-inside: avoid; }
+
+      a { color: #000; text-decoration: none; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 8pt; }
+
+      .badge-pill { border: 1px solid #000; background: #fff !important; color: #000 !important; }
+
+      #footer { background: #000 !important; color: #fff !important; }
+
+      .tbd-box { border: 1px solid #ccc; background: #f9f9f9 !important; }
+
+      table { break-inside: auto; }
+      tr { break-inside: avoid; page-break-inside: avoid; }
+
+      .fee-card, .admission-card, .rule-panel, .timing-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      img { max-width: 100% !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     TOP NAVIGATION
+============================================================ -->
+<nav id="top-nav" role="navigation" aria-label="Section navigation">
+  <div class="nav-inner">
+    <span class="nav-brand">Nightmare at the Nest '26</span>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#welcome">Overview</a></li>
+      <li><a href="#venue">Venue</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#entries">Entries</a></li>
+      <li><a href="#fees">Fees</a></li>
+      <li><a href="#admission">Admission</a></li>
+      <li><a href="#rules">Rules</a></li>
+      <li><a href="#scoring">Awards</a></li>
+      <li><a href="#timing">Timing</a></li>
+      <li><a href="#parking">Parking</a></li>
+      <li><a href="#map">Map</a></li>
+      <li><a href="#safety">Safety</a></li>
+      <li><a href="#contacts">Contacts</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO / HEADER
+============================================================ -->
+<header id="hero" role="banner">
+  <div class="logo-wrap">
+    <img src="assets/NightmareAtTheNestLogo.PNG" alt="Nightmare at the Nest Invitational Logo">
+  </div>
+  <div class="meet-label">2026 Invitational Meet Packet</div>
+  <div class="school-line">Highland High School &mdash; Gilbert, Arizona</div>
+  <div class="date-line">Thursday, April 2, 2026</div>
+  <span class="badge-pill">AIA State-Qualifying Meet</span>
+</header>
+
+<!-- ============================================================
+     QUICK INFO BAR
+============================================================ -->
+<section id="quick-info" aria-label="Quick meet information">
+  <div id="quick-info-inner">
+    <div class="quick-info-grid">
+      <div class="qi-tile">
+        <div class="qi-icon">&#128197;</div>
+        <div class="qi-text">
+          <span class="qi-label">Date &amp; Start</span>
+          <span class="qi-value">April 2, 2026 &mdash; 4:00 PM</span>
+        </div>
+      </div>
+      <div class="qi-tile">
+        <div class="qi-icon">&#128205;</div>
+        <div class="qi-text">
+          <span class="qi-label">Location</span>
+          <span class="qi-value">4301 E Guadalupe Rd, Gilbert, AZ 85234</span>
+        </div>
+      </div>
+      <div class="qi-tile">
+        <div class="qi-icon">&#127942;</div>
+        <div class="qi-text">
+          <span class="qi-label">Team Scoring</span>
+          <span class="qi-value">10-8-6-5-4-3-2-1 (Top 8)</span>
+        </div>
+      </div>
+      <div class="qi-tile">
+        <div class="qi-icon">&#9200;</div>
+        <div class="qi-text">
+          <span class="qi-label">Entry Deadline</span>
+          <span class="qi-value">March 31 @ 10:00 PM AZ</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PAGE BODY
+============================================================ -->
+<main class="page-wrapper">
+
+  <!-- 3. WELCOME / MEET OVERVIEW -->
+  <section id="welcome" class="section" aria-labelledby="welcome-heading">
+    <div class="section-header">
+      <h2 id="welcome-heading">Welcome &amp; Meet Overview</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+    </div>
+
+    <p>Welcome coaches, athletes, families, and officials to the inaugural <strong>Nightmare at the Nest Invitational</strong>, hosted by Highland High School Track &amp; Field. This is an AIA state-qualifying meet, and we are excited to begin what we expect will be an annual tradition of fierce, well-run competition at the Nest. We are proud to open our facility to some of the best programs in the East Valley and beyond.</p>
+
+    <p>Please read this packet thoroughly. All logistical, entry, and competition information is contained herein. This document will be updated as details are finalized — check Athletic.net for the most current version. Questions may be directed to Meet Director Jacob Rutter at the contact information below.</p>
+
+    <div class="contact-block">
+      <strong>Meet Director</strong>
+      <div class="contact-name">Jacob Rutter</div>
+      <a href="mailto:jacob.rutter@gilbertschools.net">jacob.rutter@gilbertschools.net</a> &nbsp;|&nbsp; <a href="tel:4803161436">480-316-1436</a>
+    </div>
+  </section>
+
+  <!-- 4. VENUE & LOCATION -->
+  <section id="venue" class="section" aria-labelledby="venue-heading">
+    <div class="section-header">
+      <h2 id="venue-heading">Venue &amp; Location</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+    </div>
+
+    <div class="venue-details">
+      <p><strong>Highland High School</strong> &nbsp;&mdash;&nbsp; 4301 E Guadalupe Rd, Gilbert, AZ 85234 &nbsp;&mdash;&nbsp; <a href="tel:4808130051">(480) 813-0051</a></p>
+    </div>
+
+    <div class="venue-meta-grid">
+      <div class="venue-meta-tile">
+        <div class="vmt-label">Track</div>
+        <div class="vmt-value">8-Lane Track</div>
+      </div>
+      <div class="venue-meta-tile">
+        <div class="vmt-label">Infield Surface</div>
+        <div class="vmt-value">Natural Grass</div>
+      </div>
+      <div class="venue-meta-tile">
+        <div class="vmt-label">Spike Rule</div>
+        <div class="vmt-value">1/4&Prime; Pyramid or Less</div>
+      </div>
+    </div>
+
+    <p style="font-size:0.9rem; color:var(--gray-700); margin-bottom:6px;"><strong>Spike Rule:</strong> 1/4&Prime; pyramid spikes or less are required on all track and infield surfaces. This will be strictly enforced. See Javelin exception under Competition Rules.</p>
+
+    <h3>Field Event Locations</h3>
+    <div class="field-events-grid">
+      <div class="fe-card">
+        <div class="fe-event">Long Jump</div>
+        <div class="fe-location">South runway, outside track</div>
+        <div class="fe-order">Girls first, then Boys</div>
+      </div>
+      <div class="fe-card">
+        <div class="fe-event">Triple Jump</div>
+        <div class="fe-location">D-Pad adjacent to High Jump area</div>
+        <div class="fe-order">Boys first, then Girls</div>
+      </div>
+      <div class="fe-card">
+        <div class="fe-event">High Jump</div>
+        <div class="fe-location">South end of track</div>
+        <div class="fe-order">Girls first, then Boys</div>
+      </div>
+      <div class="fe-card">
+        <div class="fe-event">Pole Vault</div>
+        <div class="fe-location">South side, outside track</div>
+        <div class="fe-order">Girls first, then Boys</div>
+      </div>
+      <div class="fe-card">
+        <div class="fe-event">Shot Put</div>
+        <div class="fe-location">2 rings on site</div>
+        <div class="fe-order">&nbsp;</div>
+      </div>
+      <div class="fe-card">
+        <div class="fe-event">Discus</div>
+        <div class="fe-location">East practice fields</div>
+        <div class="fe-order">&nbsp;</div>
+      </div>
+      <div class="fe-card" style="grid-column: 1 / -1;">
+        <div class="fe-event">Javelin</div>
+        <div class="fe-location">East practice fields (grass)</div>
+        <div class="fe-order">&nbsp;</div>
+      </div>
+    </div>
+
+    <div class="clerk-note">
+      <strong>Clerk of Course / Running Check-In:</strong> North end of the infield. Athletes must report to the clerk when called. Failure to report may result in scratching.
+    </div>
+  </section>
+
+  <!-- 5. SCHEDULE OF EVENTS -->
+  <section id="schedule" class="section" aria-labelledby="schedule-heading">
+    <div class="section-header">
+      <h2 id="schedule-heading">Schedule of Events</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+    </div>
+
+    <div class="schedule-grid">
+
+      <!-- Field Events -->
+      <div class="schedule-panel">
+        <div class="schedule-panel-header">Field Events</div>
+        <div class="schedule-panel-body">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Event</th>
+                  <th>Warm-Up</th>
+                  <th>Comp. Start</th>
+                  <th>Gender Order</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Long Jump</td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                  <td>Girls / Boys</td>
+                </tr>
+                <tr>
+                  <td>Triple Jump</td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                  <td>Boys / Girls</td>
+                </tr>
+                <tr>
+                  <td>High Jump</td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                  <td>Girls / Boys</td>
+                </tr>
+                <tr>
+                  <td>Pole Vault</td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                  <td>Girls / Boys</td>
+                </tr>
+                <tr>
+                  <td>Shot Put</td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                </tr>
+                <tr>
+                  <td>Discus</td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                </tr>
+                <tr>
+                  <td>Javelin</td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                  <td><span class="tbd-inline">TBD</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="schedule-note">
+            Field event schedule will be posted with the heat sheet release. All field events begin at or after <strong>3:00 PM warm-up time</strong>.
+          </div>
+        </div>
+      </div>
+
+      <!-- Running Events -->
+      <div class="schedule-panel">
+        <div class="schedule-panel-header">Running Events Order</div>
+        <div class="schedule-panel-body">
+          <ol class="running-order-list">
+            <li>4x800 Relay</li>
+            <li>100m Hurdles <span style="font-size:0.8rem;color:var(--gray-400);">(100mH Girls / 110mH Boys)</span></li>
+            <li>100 Meters</li>
+            <li>4x100 Relay</li>
+            <li>400 Meters</li>
+            <li>300m Hurdles</li>
+            <li>800 Meters</li>
+            <li>200 Meters</li>
+            <li>1600 Meters</li>
+            <li>3200 Meters</li>
+            <li>4x400 Relay</li>
+          </ol>
+          <div class="schedule-note" style="margin-top:14px;">
+            Girls compete first in all running events. Schedule is rolling &mdash; athletes must report to clerk of course when called. <strong>First running event begins at 4:00 PM.</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. ENTRY INFORMATION -->
+  <section id="entries" class="section" aria-labelledby="entries-heading">
+    <div class="section-header">
+      <h2 id="entries-heading">Entry Information</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+    </div>
+
+    <div class="entry-box">
+      <div class="entry-deadline-banner">
+        <span>Entry Deadline</span>
+        March 31, 2026 at 10:00 PM &mdash; Arizona Time
+      </div>
+
+      <div class="entry-grid">
+        <div class="entry-item">
+          <div class="ei-label">Entry Platform</div>
+          <div class="ei-value">Athletic.net</div>
+        </div>
+        <div class="entry-item">
+          <div class="ei-label">Entries Per School</div>
+          <div class="ei-value">3 athletes per individual event | 1 relay per event</div>
+        </div>
+      </div>
+
+      <ul class="entry-notes">
+        <li><strong>Mark Entry:</strong> FAT marks are preferred; hand-timed marks are accepted. Do not exaggerate marks.</li>
+        <li><strong>Name Accuracy:</strong> Verify that each athlete's name spelling on Athletic.net matches their MileSplit / MaxPreps records. State-qualifying marks will be recorded under the name as entered &mdash; errors are the responsibility of the entering school.</li>
+        <li><strong>Substitution Policy:</strong>
+          <div class="tbd-box" style="margin-top:8px; margin-bottom:0;">
+            <div class="tbd-header">&#9888;&#65039; Pending</div>
+            <p>Substitution policy will be confirmed prior to packet finalization. Contact Coach Rutter with questions.</p>
+          </div>
+        </li>
+        <li><strong>Heat Sheets:</strong> Heat sheets will be released via Athletic.net. Release timeline TBD.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. ENTRY FEES & PAYMENT -->
+  <section id="fees" class="section" aria-labelledby="fees-heading">
+    <div class="section-header">
+      <h2 id="fees-heading">Entry Fees &amp; Payment</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+    </div>
+
+    <div class="fee-cards">
+      <div class="fee-card">
+        <div class="fc-title">Co-Ed Entry (Both Genders)</div>
+        <div class="fc-amount">$400</div>
+        <div class="fc-sub">Per school</div>
+      </div>
+      <div class="fee-card">
+        <div class="fc-title">Single-Gender Entry</div>
+        <div class="fc-amount">$200</div>
+        <div class="fc-sub">Per school</div>
+      </div>
+    </div>
+
+    <div class="payment-details">
+      <p style="font-size:0.82rem; color:var(--gray-400); text-transform:uppercase; font-weight:700; letter-spacing:0.07em; margin-bottom:14px;">Payment Details</p>
+      <p><strong>No individual entry fees.</strong> Fee covers the entire school entry (one gender or both).</p>
+      <p><strong>Payment Due:</strong> March 26, 2026</p>
+      <p><strong>Checks Payable To:</strong> Highland Running Booster Club</p>
+      <p><strong>Mail To:</strong> Attn: Jacob Rutter, Highland High School, 4301 E Guadalupe Rd, Gilbert, AZ 85234</p>
+      <p>Schools that require a <strong>W-9</strong> should contact Coach Rutter directly prior to submitting payment.</p>
+      <div class="payment-alert">NO ONLINE OR ELECTRONIC PAYMENT ACCEPTED &mdash; CHECKS ONLY</div>
+    </div>
+  </section>
+
+  <!-- 8. ADMISSION -->
+  <section id="admission" class="section" aria-labelledby="admission-heading">
+    <div class="section-header">
+      <h2 id="admission-heading">Admission</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+    </div>
+
+    <div class="admission-grid">
+      <div class="admission-card paid">
+        <div class="ac-title">General Admission</div>
+        <div class="ac-price">$5.00</div>
+        <div class="ac-detail">Cash at the gate &mdash; no advance tickets</div>
+      </div>
+      <div class="admission-card free">
+        <div class="ac-title">Free Admission</div>
+        <div class="ac-free-label">FREE</div>
+        <ul>
+          <li>AIA passes</li>
+          <li>Any school district teacher or staff ID</li>
+          <li>Coaches (enter via athlete entrance)</li>
+          <li>Uniformed athletes (enter via athlete entrance)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="admission-note">
+      <ul>
+        <li><strong>Cash only at gate</strong> &mdash; no advance ticket sales.</li>
+        <li>Coaches and uniformed athletes enter through the <strong>athlete entrance</strong> &mdash; no admission charge.</li>
+        <li>Spectators entering through the main entrance are subject to the <strong>clear bag policy</strong> per district guidelines. Athletes and coaches entering through the athlete entrance are not subject to the clear bag restriction.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 9. COMPETITION RULES & FORMAT -->
+  <section id="rules" class="section" aria-labelledby="rules-heading">
+    <div class="section-header">
+      <h2 id="rules-heading">Competition Rules &amp; Format</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+    </div>
+
+    <!-- General Rules -->
+    <h3>General Rules</h3>
+    <div class="rules-grid" style="margin-bottom:28px;">
+      <div class="rule-panel">
+        <div class="rule-panel-header">General Conduct</div>
+        <div class="rule-panel-body">
+          <ul>
+            <li>Meet conducted under current <strong>NFHS rules</strong> and <strong>AIA guidelines</strong>.</li>
+            <li><strong>Spike Rule:</strong> 1/4&Prime; pyramid spikes or less, strictly enforced on all surfaces. Javelin athletes on grass may use longer spikes at their discretion.</li>
+            <li>Coaches are restricted to designated <strong>coaches boxes</strong> during competition.</li>
+            <li>Infield is <strong>closed to spectators</strong> at all times.</li>
+          </ul>
+          <span class="rule-alert">NO REVERSE RUNNING on the track or in throwing/jumping areas &mdash; STRICTLY ENFORCED</span>
+        </div>
+      </div>
+      <div class="rule-panel">
+        <div class="rule-panel-header">Running Events</div>
+        <div class="rule-panel-body">
+          <ul>
+            <li>All running events contested as <strong>finals (heats against time)</strong>.</li>
+            <li>Girls compete first in all events.</li>
+            <li><strong>800m:</strong> Box-alley starts.</li>
+            <li><strong>1600m / 3200m:</strong> Single or double waterfall start depending on the number of entries. Game management may place athletes in boxes at the start.</li>
+            <li>Athletes must check in with the <strong>Clerk of Course</strong> (north end of infield) when called. Failure to check in may result in scratching.</li>
+            <li><strong>Relay teams:</strong> All 4 athletes must be present at the clerk of course AND at the starting line.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Throwing Events -->
+    <h3>Throwing Events (Shot Put, Discus, Javelin)</h3>
+    <div class="rules-grid" style="margin-bottom:28px;">
+      <div class="rule-panel">
+        <div class="rule-panel-header">Format &amp; Flights</div>
+        <div class="rule-panel-body">
+          <ul>
+            <li><strong>Format:</strong> 3 preliminary attempts | Top 9 athletes advance to finals.</li>
+            <li>15 minutes between flights.</li>
+            <li>Finals begin immediately after the last prelim flight.</li>
+            <li>Javelin is contested on the grass fields east of the stadium.</li>
+            <li>Athletes who leave the throwing area to compete in a running event have <strong>10 minutes</strong> to return.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="rule-panel">
+        <div class="rule-panel-header">Implements &amp; Weigh-In</div>
+        <div class="rule-panel-body">
+          <ul>
+            <li>All implements must be <strong>marked with school name</strong>. The host is not responsible for lost or damaged implements.</li>
+            <li>Implement weigh-in location and policy:
+              <div class="tbd-box" style="margin-top:6px; margin-bottom:0; padding:10px 14px;">
+                <div class="tbd-header">&#9888;&#65039; TBD</div>
+                <p style="margin:0; font-size:0.82rem;">Weigh-in location and procedure will be published with the final packet.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Horizontal Jumps -->
+    <h3>Long Jump &amp; Triple Jump</h3>
+    <div class="rules-grid" style="margin-bottom:28px;">
+      <div class="rule-panel">
+        <div class="rule-panel-header">Long Jump</div>
+        <div class="rule-panel-body">
+          <ul>
+            <li><strong>Format:</strong> 3 preliminary attempts | Top 9 advance to finals.</li>
+            <li><strong>Takeoff board:</strong> 8 feet.</li>
+            <li><strong>Gender order:</strong> Girls first, then Boys.</li>
+            <li>Long Jump completes before Triple Jump begins.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="rule-panel">
+        <div class="rule-panel-header">Triple Jump</div>
+        <div class="rule-panel-body">
+          <ul>
+            <li><strong>Format:</strong> 3 preliminary attempts | Top 9 advance to finals.</li>
+            <li><strong>Takeoff boards:</strong> 24 ft / 28 ft / 32 ft.</li>
+            <li><strong>Gender order:</strong> Boys first, then Girls.</li>
+            <li>Begins after Long Jump competition concludes.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vertical Jumps -->
+    <h3>High Jump &amp; Pole Vault</h3>
+    <div class="rules-grid">
+      <div class="rule-panel">
+        <div class="rule-panel-header">High Jump</div>
+        <div class="rule-panel-body">
+          <ul>
+            <li><strong>Girls opening height:</strong> 4&prime;0&Prime;</li>
+            <li><strong>Boys opening height:</strong> 5&prime;2&Prime;</li>
+            <li><strong>Bar increments:</strong> 2&Prime; per height throughout.</li>
+            <li>Girls compete first, then Boys.</li>
+            <li>Competition conducted per NFHS rules.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="rule-panel">
+        <div class="rule-panel-header">Pole Vault</div>
+        <div class="rule-panel-body">
+          <ul>
+            <li><strong>Girls opening height:</strong> 5&prime;0&Prime;</li>
+            <li><strong>Boys opening height:</strong> 7&prime;0&Prime;</li>
+            <li><strong>Bar increments:</strong> 6&Prime; per height throughout.</li>
+            <li>Girls compete first, then Boys.</li>
+            <li>PV coaches must remain in the designated coaches box. <strong>Coaching credential verification required.</strong></li>
+            <li>Athletes must complete the <strong>NFHS PV weight verification form</strong> prior to competition.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. SCORING & AWARDS -->
+  <section id="scoring" class="section" aria-labelledby="scoring-heading">
+    <div class="section-header">
+      <h2 id="scoring-heading">Scoring &amp; Awards</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+    </div>
+
+    <div class="scoring-grid">
+      <div>
+        <h3 style="margin-top:0;">Point System</h3>
+        <div class="scoring-table-wrap">
+          <table class="scoring-table">
+            <thead>
+              <tr>
+                <th>Place</th>
+                <th>Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1st</td><td>10</td></tr>
+              <tr><td>2nd</td><td>8</td></tr>
+              <tr><td>3rd</td><td>6</td></tr>
+              <tr><td>4th</td><td>5</td></tr>
+              <tr><td>5th</td><td>4</td></tr>
+              <tr><td>6th</td><td>3</td></tr>
+              <tr><td>7th</td><td>2</td></tr>
+              <tr><td>8th</td><td>1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.82rem; color:var(--gray-700); margin-top:10px;">Relays score the same as individual events.</p>
+      </div>
+
+      <div>
+        <h3 style="margin-top:0;">Awards</h3>
+        <ul class="awards-list">
+          <li>
+            <span class="award-icon">&#127941;</span>
+            <span><strong>Individual Awards:</strong> Medals presented to 1st, 2nd, and 3rd place finishers in each event.</span>
+          </li>
+          <li>
+            <span class="award-icon">&#127942;</span>
+            <span><strong>Team Awards:</strong> Trophies awarded to 1st Place and Runner-Up &mdash; Boys and Girls scored separately (4 trophies total).</span>
+          </li>
+        </ul>
+
+        <div class="awards-pickup">
+          <strong>Awards Pickup:</strong> Coaches should collect their awards packets at the <strong>press box at the conclusion of the meet</strong>. Please ensure a coaching staff member is available for pickup.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. TIMING & RESULTS -->
+  <section id="timing" class="section" aria-labelledby="timing-heading">
+    <div class="section-header">
+      <h2 id="timing-heading">Timing &amp; Results</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+    </div>
+
+    <div class="timing-cards">
+      <div class="timing-card">
+        <div class="tc-label">Timing System</div>
+        <div class="tc-value">Full Automatic Timing (FAT)</div>
+        <div class="tc-note">Provided by Wingfoot Timing</div>
+      </div>
+      <div class="timing-card">
+        <div class="tc-label">Live Results &amp; Heat Sheets</div>
+        <div class="tc-value">Athletic.net</div>
+        <div class="tc-note">Search: "Nightmare at the Nest 2026"</div>
+      </div>
+      <div class="timing-card">
+        <div class="tc-label">State Qualifying Status</div>
+        <div class="tc-value">AIA State-Qualifying</div>
+        <div class="tc-note">Official results submitted to AIA upon conclusion</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. PARKING & TRANSPORTATION -->
+  <section id="parking" class="section" aria-labelledby="parking-heading">
+    <div class="section-header">
+      <h2 id="parking-heading">Parking &amp; Transportation</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+    </div>
+
+    <div class="parking-map-wrap">
+      <img src="assets/BusParking-AthleteEntrance.png" alt="Bus parking and athlete entrance map for Highland High School">
+    </div>
+
+    <div class="parking-grid">
+      <div class="parking-item">
+        <div class="pi-label">Spectator Parking</div>
+        <div class="pi-value">Main school parking lot off Highland Hawks Dr &mdash; opens at <strong>3:30 PM</strong>. Enter via the Main Entrance on the south side of the lot.</div>
+      </div>
+      <div class="parking-item">
+        <div class="pi-label">Team Bus Drop-Off</div>
+        <div class="pi-value">Buses drop athletes on <strong>N. Roadrunner Drive</strong> (east side of campus). After drop-off, buses must leave campus and may park at <strong>Highland Junior High School (HJHS)</strong> or return at the conclusion of the meet.</div>
+      </div>
+      <div class="parking-item">
+        <div class="pi-label">Athlete &amp; Coach Entrance</div>
+        <div class="pi-value">Athletes and coaches enter through the <strong>south side of campus</strong> (see map above).</div>
+      </div>
+      <div class="parking-item">
+        <div class="pi-label">Clear Bag Policy</div>
+        <div class="pi-value">Per district policy, spectators entering the main entrance must use clear bags. Athletes and coaches entering through the athlete entrance are <strong>not</strong> subject to this restriction.</div>
+      </div>
+    </div>
+
+    <ul style="font-size:0.9rem; color:var(--gray-700);">
+      <li><strong>No overflow parking</strong> is available. Plan accordingly.</li>
+      <li><strong>No shuttle service</strong> is provided.</li>
+    </ul>
+
+    <div class="parking-prohibit">
+      &#9888;&#65039; &nbsp; Do not park in any areas with posted "No Parking" signs. Vehicles may be ticketed or towed.
+    </div>
+  </section>
+
+  <!-- 13. FIELD EVENT VENUE MAP -->
+  <section id="map" class="section" aria-labelledby="map-heading">
+    <div class="section-header">
+      <h2 id="map-heading">Field Event Venue Map</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+    </div>
+
+    <figure>
+      <div class="venue-map-wrap">
+        <img src="assets/FieldEvent_Locations.png" alt="Field event locations diagram for Highland High School athletic complex">
+      </div>
+      <figcaption>Field event locations at Highland High School athletic complex. Discus and Javelin are contested on the east practice fields (not shown at full extent).</figcaption>
+    </figure>
+  </section>
+
+  <!-- 14. HOSPITALITY & FACILITIES -->
+  <section id="hospitality" class="section" aria-labelledby="hospitality-heading">
+    <div class="section-header">
+      <h2 id="hospitality-heading">Hospitality &amp; Facilities</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+    </div>
+
+    <div class="tbd-box">
+      <div class="tbd-header">&#9888;&#65039; Pending &mdash; Section Not Yet Finalized</div>
+      <p>Hospitality and facilities information &mdash; including coaches room location, concession availability, team camp areas, and water station locations &mdash; will be added prior to packet finalization.</p>
+      <p>Contact Coach Rutter with questions: <a href="mailto:jacob.rutter@gilbertschools.net">jacob.rutter@gilbertschools.net</a> | <a href="tel:4803161436">480-316-1436</a></p>
+    </div>
+  </section>
+
+  <!-- 15. ATHLETIC TRAINER / FIRST AID -->
+  <section id="firstaid" class="section" aria-labelledby="firstaid-heading">
+    <div class="section-header">
+      <h2 id="firstaid-heading">Athletic Trainer / First Aid</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+    </div>
+
+    <div class="tbd-box">
+      <div class="tbd-header">&#9888;&#65039; Pending &mdash; Section Not Yet Finalized</div>
+      <p>Athletic trainer information and first aid station location will be published in the final packet.</p>
+      <p style="font-weight:700; color:#C62828;">In the event of a life-threatening emergency, call 911 immediately.</p>
+    </div>
+  </section>
+
+  <!-- 16. SAFETY & EMERGENCY PROCEDURES -->
+  <section id="safety" class="section" aria-labelledby="safety-heading">
+    <div class="section-header">
+      <h2 id="safety-heading">Safety &amp; Emergency Procedures</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+    </div>
+
+    <div class="emergency-banner" role="alert">
+      &#128680; &nbsp; Life-Threatening Emergency: CALL 911 IMMEDIATELY
+    </div>
+
+    <div class="tbd-box">
+      <div class="tbd-header">&#9888;&#65039; Pending &mdash; Emergency Plan in Development</div>
+      <p>The following items will be detailed in the final packet. Contact Coach Rutter with questions prior to the meet.</p>
+      <ul style="color:var(--gray-700); font-size:0.9rem; padding-left:20px; margin-top:8px;">
+        <li><strong>Lightning / Severe Weather Policy:</strong> [TBD &mdash; AIA lightning protocol will apply]</li>
+        <li><strong>Shelter-in-Place Location:</strong> [TBD]</li>
+        <li><strong>Nearest Hospital:</strong> [TBD]</li>
+        <li><strong>AED Location(s):</strong> [TBD]</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 17. CONTACTS -->
+  <section id="contacts" class="section" aria-labelledby="contacts-heading">
+    <div class="section-header">
+      <h2 id="contacts-heading">Contacts</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+    </div>
+
+    <div class="contacts-table-wrap">
+      <table class="contacts-table">
+        <thead>
+          <tr>
+            <th>Role</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Meet Director / Head Coach</td>
+            <td>Jacob Rutter</td>
+            <td><a href="mailto:jacob.rutter@gilbertschools.net">jacob.rutter@gilbertschools.net</a></td>
+            <td><a href="tel:4803161436">480-316-1436</a></td>
+          </tr>
+          <tr>
+            <td>Athletic Director</td>
+            <td>Brandon Larson</td>
+            <td><a href="mailto:brandon.larson@gilbertschools.net">brandon.larson@gilbertschools.net</a></td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>School Main Line</td>
+            <td>Highland High School</td>
+            <td>&mdash;</td>
+            <td><a href="tel:4808130051">(480) 813-0051</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer id="footer" role="contentinfo">
+  <div>&copy; 2026 Highland High School Athletics &mdash; Nightmare at the Nest Invitational</div>
+  <div class="footer-sub">Highland High School &nbsp;&bull;&nbsp; 4301 E Guadalupe Rd, Gilbert, AZ 85234 &nbsp;&bull;&nbsp; AIA State-Qualifying Meet</div>
+</footer>
+
+<!-- Vanilla JS: mobile nav toggle only -->
+<script>
+  (function () {
+    var toggle = document.getElementById('nav-toggle');
+    var links  = document.getElementById('nav-links');
+
+    if (!toggle || !links) return;
+
+    toggle.addEventListener('click', function () {
+      var isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Close nav when a link is clicked
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

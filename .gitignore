@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Reference files (not ours to publish)
+examples/
+
+# Private AI session memory
+.claude/
+
+# Invoice and internal financial docs
+assets/*.docx
+assets/~$*
