@@ -1244,6 +1244,43 @@
       }
 
       /* ============================================================
+       CHANGELOG
+    ============================================================ */
+      .changelog-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+      }
+      .changelog-table thead th {
+        background: var(--black);
+        color: var(--white);
+        text-align: left;
+        padding: 9px 14px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .changelog-table tbody tr:nth-child(even) {
+        background: var(--gray-100);
+      }
+      .changelog-table tbody td {
+        padding: 9px 14px;
+        vertical-align: top;
+        border-bottom: 1px solid var(--gray-200);
+        color: var(--gray-700);
+      }
+      .changelog-table tbody td:first-child {
+        white-space: nowrap;
+        font-weight: 600;
+        color: var(--teal);
+      }
+      .changelog-table tbody td:nth-child(2) {
+        font-weight: 600;
+        color: var(--black);
+      }
+
+      /* ============================================================
        PRINT STYLES
     ============================================================ */
       @media print {
@@ -1317,6 +1354,7 @@
       <div class="nav-inner">
         <span class="nav-brand">Nightmare at the Nest '26</span>
         <ul class="nav-links" id="nav-links">
+          <li><a href="#changelog">Updates</a></li>
           <li><a href="#welcome">Overview</a></li>
           <li><a href="#venue">Venue</a></li>
           <li><a href="#schedule">Schedule</a></li>
@@ -1408,6 +1446,61 @@
      PAGE BODY
 ============================================================ -->
     <main class="page-wrapper">
+
+      <!-- CHANGELOG -->
+      <section id="changelog" class="section" aria-labelledby="changelog-heading">
+        <div class="section-header">
+          <h2 id="changelog-heading">Packet Updates</h2>
+          <div class="section-divider" aria-hidden="true"></div>
+        </div>
+        <p style="font-size:0.88rem;color:var(--gray-500);margin-bottom:14px;">
+          Changes to this packet are logged below. Check this section each visit to see what&rsquo;s new.
+        </p>
+        <div class="table-wrap">
+          <table class="changelog-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Section</th>
+                <th>Change</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mar 24, 2026</td>
+                <td>Admission</td>
+                <td>General admission updated to $10; Venmo accepted at gate.</td>
+              </tr>
+              <tr>
+                <td>Mar 24, 2026</td>
+                <td>Schedule of Events</td>
+                <td>1600m moved to run after 100m and before 4x100 Relay.</td>
+              </tr>
+              <tr>
+                <td>Mar 24, 2026</td>
+                <td>Schedule of Events &mdash; Field</td>
+                <td>Long Jump gender order corrected to Boys first, then Girls. Triple Jump corrected to Girls first, then Boys. Pole Vault warm-up moved to 12:00 PM; competition at 1:00 PM.</td>
+              </tr>
+              <tr>
+                <td>Mar 24, 2026</td>
+                <td>Competition Rules &mdash; High Jump</td>
+                <td>Girls height progression: 4-0, 4-3, 4-6, 4-8, 4-10, 5-0, 5-2; Boys: 5-2, 5-5, 5-8, 5-10, 6-0, 6-2. Bar increments 1&Prime; after end of listed progression.</td>
+              </tr>
+              <tr>
+                <td>Mar 24, 2026</td>
+                <td>Competition Rules &mdash; Triple Jump</td>
+                <td>Takeoff boards updated to 24&prime; / 32&prime; / 36&prime;.</td>
+              </tr>
+              <tr>
+                <td>Mar 24, 2026</td>
+                <td>Parking &amp; Transportation</td>
+                <td>Added note: school will have multiple events on meet day &mdash; plan arrival accordingly.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <!-- 3. WELCOME / MEET OVERVIEW -->
       <section id="welcome" class="section" aria-labelledby="welcome-heading">
         <div class="section-header">
